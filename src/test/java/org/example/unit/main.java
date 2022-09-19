@@ -1,2 +1,4 @@
-package org.example.unit;public class main {
+package org.example.unit;
+
+public class main {
 }

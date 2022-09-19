@@ -1,4 +1,4 @@
-package Lesson_1;
+package Lesson_11;
 
 
 import org.openqa.selenium.WebDriver;
@@ -16,13 +16,5 @@ public class MyFirstTest {
         driver.close();
     }
 
-    @Test
-    public void secondtest() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://rozetka.com.ua");
-        //driver.findElement();
-        Thread.sleep(3000);
-        driver.close();
-    }
 }
 
