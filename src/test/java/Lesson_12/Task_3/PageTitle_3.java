@@ -8,27 +8,24 @@ package Lesson_12.Task_3;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class PageTitle_3{
-    public static void main(String[] args) {
+
+    @Test
+            public  void comperingTitle(){
         System.setProperty("webdriver.chrome.driver", "C:\\chromeDriwer\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        WebDriver  driver = new ChromeDriver();
+        //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().to("https://butlers.ua/ua/");
         String actualTitle = driver.getTitle();
         System.out.println("Actual Title - " + actualTitle);
-        System.out.println();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         String expectedTitle = "BUTLERS Made for Your Home БАТЛЕРС Декор для Дома Интерьера Новый год";
         System.out.println("Expected Title - " + expectedTitle);
-        System.out.println();
-        if(actualTitle.equalsIgnoreCase(expectedTitle))
-            System.out.println("Title Matched");
-        else
-            System.out.println("Title didn't match");
-        //Assert.assertEquals( actualTitle, expectedTitle,"Condition true");
+        Assert.assertEquals(actualTitle,expectedTitle, "The actual result does not match the expected result");
         driver.close();
         driver.quit();
 
